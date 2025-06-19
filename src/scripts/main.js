@@ -12,8 +12,8 @@ wall.addEventListener('click', (e) => {
     e.clientY >= wallCoordinates.top &&
     e.clientY <= wallCoordinates.bottom
   ) {
-    let x = e.offsetX - spider.offsetWidth / 2;
-    let y = e.offsetY - spider.offsetHeight / 2;
+    let x = e.clientX - wallCoordinates.left - spider.offsetWidth / 2;
+    let y = e.clientY - wallCoordinates.top - spider.offsetHeight / 2;
 
     x = Math.max(0, Math.min(x, wall.clientWidth - spider.offsetWidth));
     y = Math.max(0, Math.min(y, wall.clientHeight - spider.offsetHeight));
